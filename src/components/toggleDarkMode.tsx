@@ -14,15 +14,13 @@ function ToggleDarkMode() {
       });
     };
 
-    if (backgroundMode) {
-      document.body.classList.add("darkMode");
-      toggleDarkModeClass(document.querySelectorAll(".resume-content"), true);
-      toggleDarkModeClass(document.querySelectorAll(".input-container"), true);
-    } else {
-      document.body.classList.remove("darkMode");
-      toggleDarkModeClass(document.querySelectorAll(".resume-content"), false);
-      toggleDarkModeClass(document.querySelectorAll(".input-container"), false);
-    }
+    const applyDarkMode = (add: boolean) => {
+      document.body.classList.toggle("darkMode", add);
+      toggleDarkModeClass(document.querySelectorAll(".resume-content"), add);
+      toggleDarkModeClass(document.querySelectorAll(".input-container"), add);
+    };
+
+    applyDarkMode(backgroundMode);
   }, [backgroundMode]);
 
   const handleClick = () => {
