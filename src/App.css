@@ -1,0 +1,42 @@
+#root {
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+.resume-content {
+  border: 8px solid #ccc;
+  background-color: #fff;
+  min-height: 1000px;
+  padding: 0px;
+}
+
+.resume-content.darkMode {
+  border-color: #fefefe;
+}
+
+.color-banner {
+  background-color: #334d75;
+  padding: 10px;
+  color: #fff;
+}
+
+.sub-banner {
+  background-color: #e5e8eb;
+  padding: 2px;
+  color: #324d75;
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.input-container {
+  background-color: #e5e8eb;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 40px 20px 0px;
+}
+
+.darkMode {
+  background-color: #e5d5c9;
+  color: #334d75;
+}
