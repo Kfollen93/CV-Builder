@@ -69,18 +69,6 @@ function WorkExperience(props: WorkExperienceProps) {
             />
           </Form.Group>
 
-          <Form.Group controlId="formResponsibilities">
-            <Form.Label>Responsibilities:</Form.Label>
-            <Form.Control
-              as="textarea"
-              rows={4}
-              name="responsibilities"
-              value={responsibilities}
-              onChange={onChange}
-              placeholder="Enter responsibilities"
-            />
-          </Form.Group>
-
           <Form.Group controlId="formStartDate">
             <Form.Label>Start Date:</Form.Label>
             <Form.Control
@@ -111,6 +99,18 @@ function WorkExperience(props: WorkExperienceProps) {
               value={location}
               onChange={onChange}
               placeholder="Enter your city and state"
+            />
+          </Form.Group>
+
+          <Form.Group controlId="formResponsibilities">
+            <Form.Label>Responsibilities:</Form.Label>
+            <Form.Control
+              as="textarea"
+              rows={4}
+              name="responsibilities"
+              value={responsibilities}
+              onChange={onChange}
+              placeholder="Enter responsibilities"
             />
           </Form.Group>
 
