@@ -10,6 +10,7 @@ import PersonInformation, {
 import WorkExperience, {
   WorkExpInfo,
 } from "./components/experience/WorkExperience";
+import Education, { EducationInfo } from "./components/education/Education";
 
 function App() {
   const useFormInput = <T extends object>(initialState: T) => {
@@ -42,6 +43,14 @@ function App() {
     location: "",
   });
 
+  const educationInfo = useFormInput({
+    schoolName: "",
+    degree: "",
+    enrolledDate: "",
+    graduatedDate: "",
+    awards: "",
+  });
+
   const [submittedPersonInfoData, setSubmittedPersonInfoData] = useState(
     {} as PersonInfo
   );
@@ -52,6 +61,11 @@ function App() {
   );
   const [editWorkExp, setEditWorkExp] = useState(false);
 
+  const [submittedEducationData, setSubmittedEducationData] = useState(
+    {} as EducationInfo
+  );
+  const [editEducation, setEditEducation] = useState(false);
+
   const resetPage = () => {
     personInfo.clear();
     setEditPersonalInfo(false);
@@ -60,6 +74,10 @@ function App() {
     workExpInfo.clear();
     setEditWorkExp(false);
     setSubmittedWorkExpData({} as WorkExpInfo);
+
+    educationInfo.clear();
+    setEditEducation(false);
+    setSubmittedEducationData({} as EducationInfo);
   };
 
   const handleSubmit = () => {
@@ -70,6 +88,11 @@ function App() {
   const handleWorkExperienceSubmit = () => {
     setSubmittedWorkExpData(workExpInfo.value);
     setEditWorkExp(true);
+  };
+
+  const handleEducationSubmit = () => {
+    setSubmittedEducationData(educationInfo.value);
+    setEditEducation(true);
   };
 
   return (
@@ -99,6 +122,13 @@ function App() {
             showEditButton={editWorkExp}
             onEdit={() => setEditWorkExp(false)}
           />
+          <Education
+            {...educationInfo.value}
+            onChange={educationInfo.onChange}
+            onSubmit={handleEducationSubmit}
+            showEditButton={editEducation}
+            onEdit={() => setEditEducation(false)}
+          />
         </Col>
 
         {/* Right Column */}
@@ -106,6 +136,7 @@ function App() {
           <CvDisplay
             submittedPersonInfoData={submittedPersonInfoData}
             submittedWorkExpData={submittedWorkExpData}
+            submittedEducationData={submittedEducationData}
           />
         </Col>
       </Row>
