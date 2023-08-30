@@ -71,7 +71,7 @@ function CvDisplay({
                   <div className="text-center">
                     <p className="mb-2">
                       <b>
-                        {submittedWorkExpData.startDate} -
+                        {submittedWorkExpData.startDate}&nbsp;-&nbsp;
                         {submittedWorkExpData.endDate}
                       </b>
                     </p>
@@ -102,11 +102,11 @@ function CvDisplay({
                   <div className="text-center">
                     <p className="mb-2">
                       <b>
-                        {submittedEducationData.enrolledDate} -
+                        {submittedEducationData.enrolledDate}&nbsp;-&nbsp;
                         {submittedEducationData.graduatedDate}
                       </b>
                     </p>
-                    <p className="mb-2">
+                    <p className="mx-auto" style={{ maxWidth: "600px" }}>
                       <b>{submittedEducationData.awards}</b>
                     </p>
                   </div>
