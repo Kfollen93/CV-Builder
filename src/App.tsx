@@ -11,6 +11,7 @@ import WorkExperience, {
   WorkExpInfo,
 } from "./components/experience/WorkExperience";
 import Education, { EducationInfo } from "./components/education/Education";
+import { loadForms } from "./data/seededData";
 
 function App() {
   const useFormInput = <T extends object>(initialState: T) => {
@@ -24,7 +25,7 @@ function App() {
       setValue(initialState);
     };
 
-    return { value, onChange: handleChange, clear };
+    return { value, onChange: handleChange, clear, setValue };
   };
 
   const personInfo = useFormInput({
@@ -100,8 +101,12 @@ function App() {
       <div>
         <ToggleDarkMode />
         <ClearPage resetPage={resetPage} />
-        <Button className="me-2" variant="success">
-          Load CV Example
+        <Button
+          className="me-2"
+          variant="success"
+          onClick={() => loadForms(personInfo, workExpInfo, educationInfo)}
+        >
+          Load Form Data Example
         </Button>
       </div>
 
