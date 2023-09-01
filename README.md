@@ -11,4 +11,5 @@ The intention of this project was to make more React applications, specifically 
 ## Technologies Used
 - React
 - TypeScript
+- Vite
 - Bootstrap
